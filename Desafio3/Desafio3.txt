@@ -1,0 +1,99 @@
+# Desafio 3 — Primeiro Deploy no Kubernetes - 25/03/2026
+
+## Objetivo
+
+Realizar o primeiro deploy de uma aplicação em um cluster Kubernetes, aplicando na prática os conceitos de:
+
+Deploy de aplicações
+Escalabilidade (Scaling)
+Auto recuperação (Auto Healing)
+
+## Atividades
+
+### 1. Preparação da Aplicação
+
+Utilizar uma aplicação simples para realizar o deploy no Kubernetes.
+
+Opções:
+
+Reutilizar o projeto "Hello World" desenvolvido no Desafio 1
+
+A aplicação deve:
+
+Possuir um `Dockerfile`
+Ser containerizada corretamente
+Ter sua imagem publicada no Docker Hub
+
+### 2. Criação do Deployment
+
+Criar um arquivo YAML de Deployment para a aplicação.
+
+O Deployment deve conter:
+
+Nome da aplicação
+Namespace criado no Desafio 2 (não utilizar o default)
+Definição de pelo menos 1 réplica
+Configuração do container com a imagem publicada no Docker Hub
+Definição de labels
+
+Após a criação, aplicar o Deployment no cluster utilizando o `kubectl`.
+
+Validar:
+
+Se o Deployment foi criado corretamente
+Se o(s) Pod(s) estão em execução
+
+### 3. Exposição da Aplicação (Service)
+
+Criar um Service para expor a aplicação.
+
+O Service deve:
+
+Estar no mesmo namespace do Deployment
+Ser do tipo NodePort (ou equivalente, dependendo da ferramenta utilizada)
+Mapear corretamente a porta da aplicação
+
+Após a criação, validar:
+
+* Se o Service foi criado com sucesso
+* Se a aplicação está acessível (via navegador ou curl)
+
+### 4. Scaling (Escalabilidade)
+
+Realizar o aumento do número de réplicas da aplicação.
+
+Pode ser feito de duas formas:
+
+Alterando o arquivo YAML do Deployment ou Utilizando o comando `kubectl scale`
+
+A aplicação deve ter no mínimo 3 réplicas em execução.
+
+Validar:
+
+Se múltiplos Pods foram criados
+Se todos estão em estado Running
+
+### 5. Auto Healing (Auto recuperação)
+
+Simular uma falha em um dos Pods da aplicação.
+
+Para isso:
+
+Deletar manualmente um dos Pods
+
+Validar:
+
+Se o Kubernetes recria automaticamente o Pod removido
+Se o número de réplicas desejado é mantido
+
+---
+
+## Entrega
+
+Arquivo YAML do Deployment
+Arquivo YAML do Service
+Link da imagem no Docker Hub
+Evidência do Deployment criado (kubectl get deployments)
+Evidência dos Pods em execução (kubectl get pods)
+Evidência do Scaling (múltiplos Pods)
+Evidência do Auto Healing (recriação de Pod)
