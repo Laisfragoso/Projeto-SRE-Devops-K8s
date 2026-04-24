@@ -1,0 +1,43 @@
+Desafio 1 - Configuração de Ambiente e Primeiro Projeto - 12/03/2026
+
+## Objetivo
+
+Configurar o ambiente básico de desenvolvimento, realizar a integração com ferramentas de versionamento e publicar um primeiro projeto simples.
+
+### Atividades
+
+1. Criação de Repositório:
+
+Criar um repositório público no GitHub para armazenar o projeto desenvolvido durante o curso.
+Definir um nome  para o repositório.
+Inicializar o repositório com um arquivo `README.md`.
+
+2. Configuração do Ambiente de Desenvolvimento:
+
+Instalar e configurar uma IDE de sua preferência.
+Configurar o Git na máquina local.
+Realizar a conexão entre o ambiente local e o repositório no GitHub.
+
+3. Implementação de um "Hello World":
+
+Criar um programa simples que exiba a mensagem **"Hello, World!"**.
+A linguagem de programação pode ser escolhida livremente.
+O código deve ser versionado e enviado para o repositório no GitHub.
+
+4. Documentação do Projeto:
+
+Atualizar o arquivo `README.md` contendo:
+
+Nome do projeto
+Objetivo do curso ou do projeto
+Breve descrição do que foi desenvolvido
+
+5. Criação de Conta no Docker Hub:
+
+Criar uma conta na plataforma Docker Hub.
+Link para cadastro: [https://hub.docker.com/](https://hub.docker.com/)
+
+-> Entrega:
+
+Link do repositório no GitHub
+Confirmação da conta criada no Docker Hub
