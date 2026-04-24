@@ -1,22 +1,31 @@
-Evidência da instalação do Docker
-Evidência do cluster Kubernetes criado e em execução
-Evidência do kubectl funcionando
-Evidência do kubectx e kubens instalados
-Evidência da criação de um namespace (diferente de default)
+## Evidências do Desafio 2
 
-=============================================================
+Abaixo estão as comprovações técnicas das configurações realizadas no ambiente local.
 
-Evidência da instalação do Docker ![alt text](image-1.png)
+### 1. Instalação do Docker
+Confirmação de que o engine do Docker está ativo e operacional no sistema.
+![Evidência Docker](image-1.png)
 
-Evidência do cluster Kubernetes criado e em execução ![alt text](image-2.png)
+---
 
-Evidência do kubectl funcionando ![alt text](image-3.png)
+### 2. Cluster Kubernetes
+Status do cluster criado (K3d/Kind) e validação dos componentes do plano de controle.
+![Evidência Cluster](image-2.png)
 
-Evidência do kubectx e kubens instalados 
-# Prova o kubectx (mostra o cluster atual)
-kubectx
+---
 
-# Prova o kubens (lista os namespaces de forma interativa ou simples)
-kubens
+### 3. Ferramentas de Linha de Comando
+Validação do funcionamento do kubectl e das ferramentas de produtividade.
 
-![alt text](image-4.png)
+**Kubectl Status:**
+![Evidência Kubectl](image-3.png)
+
+**Kubectx e Kubens:**
+Ferramentas utilizadas para a gestão e alternância rápida entre contextos e namespaces.
+![Evidência Kubectx e Kubens](image-4.png)
+
+---
+
+### 4. Criação de Namespace
+Evidência da criação de um namespace dedicado, garantindo o isolamento dos recursos do projeto.
+![Evidência Namespace](image-5.png)
