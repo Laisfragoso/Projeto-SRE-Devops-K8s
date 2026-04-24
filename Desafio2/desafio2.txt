@@ -1,0 +1,67 @@
+# Desafio 2 - Preparação de Ambiente Kubernetes - 18/03/2026
+
+## Objetivo
+
+Preparar o ambiente local para utilização do Kubernetes, realizando a instalação das principais ferramentas, criação de um cluster local e organização inicial com namespaces.
+
+
+### Atividades
+
+1. Instalação do Docker:
+
+Realizar a instalação do Docker na máquina local.
+
+Após a instalação, verificar se a ferramenta está funcionando corretamente.
+
+2. Criação de Cluster Kubernetes Local:
+
+Escolher uma das ferramentas abaixo para criação de um cluster Kubernetes local:
+
+Kind
+k3d
+Minikube
+
+Cada participante deve selecionar apenas uma opção, realizar a instalação e criar um cluster local em sua máquina.
+
+Ao final, garantir que o cluster esteja ativo e acessível.
+
+3. Instalação do kubectl:
+
+Instalar o kubectl, ferramenta utilizada para gerenciar clusters Kubernetes.
+
+Utilizar como referência a documentação oficial:
+[https://kubernetes.io/pt-br/docs/tasks/tools/install-kubectl-linux/](https://kubernetes.io/pt-br/docs/tasks/tools/install-kubectl-linux/)
+
+Após a instalação, validar se a ferramenta está corretamente configurada para se comunicar com o cluster criado.
+
+4. Instalação do kubectx e kubens:
+
+Instalar as ferramentas:
+
+kubectx
+kubens
+
+Essas ferramentas auxiliam na troca de contexto e namespace, facilitando a administração do ambiente Kubernetes.
+
+Utilizar como apoio:
+[https://gasparbarancelli.com/post/kubectx-e-kubens-ferramentas-para-auxiliar-na-administracao-do-Kubernetes](https://gasparbarancelli.com/post/kubectx-e-kubens-ferramentas-para-auxiliar-na-administracao-do-Kubernetes)
+
+Após a instalação, verificar se ambas estão funcionando corretamente.
+
+5. Criação de Namespace:
+
+Criar um namespace dentro do cluster Kubernetes.
+
+O nome do namespace deve ser definido por cada participante.
+
+⚠️ Não utilizar o namespace padrão (default).
+
+Após a criação, garantir que o namespace esteja disponível para uso e, se desejado, configurá-lo como padrão para as próximas operações.
+
+-> Entrega:
+
+Evidência da instalação do Docker
+Evidência do cluster Kubernetes criado e em execução
+Evidência do kubectl funcionando
+Evidência do kubectx e kubens instalados
+Evidência da criação de um namespace (diferente de default)
