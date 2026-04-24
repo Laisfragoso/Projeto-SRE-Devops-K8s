@@ -1,14 +1,12 @@
 # Projeto-SRE-Devops-K8s
 Projeto Mentoria SRE/Devops K8s por Dara Aragão 
-LAB Hands-On — 
-Kubernetes & Helm 
 
-Desafio 1 - Configuração de Ambiente e Primeiro Projeto - 12/03/2026
-Desafio 2 - Preparação de Ambiente Kubernetes - 18/03/2026
-Desafio 3 — Primeiro Deploy no Kubernetes - 25/03/2026
-Desafio 4 — Arquitetura e Troubleshooting no Kubernetes
-Desafio 5 — Desafio hands On 
 
+* **Desafio 1** - Configuração de Ambiente e Primeiro Projeto - 12/03/2026
+* **Desafio 2** - Preparação de Ambiente Kubernetes - 18/03/2026
+* **Desafio 3** - Primeiro Deploy no Kubernetes - 25/03/2026
+* **Desafio 4** - Arquitetura e Troubleshooting no Kubernetes
+* **Desafio 5** - Desafio hands On
 
 
 
