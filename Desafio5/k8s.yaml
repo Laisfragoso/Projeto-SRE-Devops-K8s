@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,14 +16,16 @@ spec:
     spec:
       containers:
       - name: fastapi
-        image: laisfragoso/fastapi-app:v1  # Substitua pelo seu usuário do Docker Hub
+        image: laisff/fastapi-app:v1
+        ports:
+        - containerPort: 8000
         resources:
           requests:
             cpu: "100m"
+            memory: "128Mi"
           limits:
             cpu: "200m"
-        ports:
-        - containerPort: 8000
+            memory: "256Mi"
 ---
 apiVersion: v1
 kind: Service
@@ -36,4 +39,24 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8000
-
+  type: ClusterIP
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: fastapi-hpa
+  namespace: lab
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: fastapi-app
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
