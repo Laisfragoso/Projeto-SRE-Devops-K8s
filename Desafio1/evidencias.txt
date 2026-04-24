@@ -1,0 +1,5 @@
+Link do repositório no GitHub
+Confirmação da conta criada no Docker Hub
+
+Repositório; https://github.com/Laisfragoso/Projeto-SRE-Devops-K8s
+docker: https://hub.docker.com/u/laisff
