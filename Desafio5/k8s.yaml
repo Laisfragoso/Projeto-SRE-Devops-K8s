@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-app
+  namespace: lab
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+      - name: fastapi
+        image: laisfragoso/fastapi-app:v1  # Substitua pelo seu usuário do Docker Hub
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "200m"
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-service
+  namespace: lab
+spec:
+  selector:
+    app: fastapi
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+
