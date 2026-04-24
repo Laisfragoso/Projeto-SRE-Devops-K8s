@@ -1,0 +1,126 @@
+Desafio 4 — Arquitetura e Troubleshooting no Kubernetes
+🎯 Objetivo
+
+Entender na prática como o Kubernetes funciona internamente, analisando:
+
+Arquitetura do cluster
+Componentes do Control Plane
+Componentes dos Nodes
+Fluxo do kubectl
+Diagnóstico de falhas em Pods
+
+🧭 PASSO A PASSO:
+
+🔹 1. Explorar a arquitetura do cluster
+
+Atividades:
+Listar os nodes do cluster:
+kubectl get nodes -o wide
+
+Descrever um node:
+kubectl describe node <nome-do-node>
+
+Identificar:
+Quantos nodes existem
+Qual é control plane (se aplicável)
+Qual runtime está sendo usado (Docker, containerd, etc.)
+
+🔹 2. Investigar o Control Plane
+
+
+Atividades:
+Listar pods do namespace do sistema:
+kubectl get pods -n kube-system
+Identificar os componentes:
+
+Vocês são encontrar Pods como:
+
+kube-apiserver
+etcd
+kube-scheduler
+kube-controller-manager
+
+Para cada componente:
+kubectl describe pod <nome-do-pod> -n kube-system
+
+Analisar:
+Em qual node está rodando
+Status
+Containers internos
+Eventos
+
+🔹 3. Investigar os Nodes
+
+
+Atividades:
+
+Ver informações detalhadas do node:
+kubectl describe node <nome-do-node>
+
+Identificar:
+kubelet (ver nos detalhes do node)
+kube-proxy (rodando como Pod no kube-system)
+container runtime
+
+Validar o kube-proxy:
+kubectl get pods -n kube-system | grep kube-proxy
+
+🔹 4. Entender o fluxo do kubectl
+
+Aqui eles precisam simular o caminho de uma requisição.
+
+Atividades:
+Executar um comando simples:
+kubectl get pods
+
+🔹 5. Criar um cenário de falha (Troubleshooting)
+
+Atividades:
+
+Criar um Pod com erro proposital.
+
+Exemplo de erro:
+
+Imagem inexistente
+Porta errada
+Comando inválido
+
+Exemplo YAML (com erro):
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-erro
+spec:
+  containers:
+  - name: app
+    image: nginx:versao-inexistente
+
+Aplicar:
+
+kubectl apply -f pod-erro.yaml
+
+🔹 6. Diagnosticar a falha
+
+Atividades:
+
+Ver status:
+kubectl get pods
+
+Descrever o pod:
+kubectl describe pod pod-erro
+
+Ver logs (se aplicável):
+kubectl logs pod-erro
+
+Identificar:
+Tipo de erro (ImagePullBackOff, CrashLoopBackOff, etc.)
+
+Mensagens de erro
+Eventos do Kubernetes
+
+🔹 7. Corrigir o problema
+
+Corrigir o YAML
+Reaplicar
+Validar que o Pod está Running
